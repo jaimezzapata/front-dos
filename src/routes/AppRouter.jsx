@@ -10,6 +10,7 @@ import React from "../pages/React";
 import Rutas from "../pages/Rutas";
 import SPA from "../pages/SPA";
 import ProtectedRoute from "./ProtectedRoute";
+import Dashboard from "../pages/Dashboard";
 
 export let enrutadorApp = [
     {
@@ -18,46 +19,46 @@ export let enrutadorApp = [
     },
     {
         path: "/home/",
-        element: <ProtectedRoute proteger={<Home />} />,
+        element: <ProtectedRoute proteger={<Dashboard />} />,
         children: [
             {
-                path: "/consumo-api",
+                path: "consumo-api",
                 element: <ConsumoAPI />
             },
             {
-                path: "/contexto",
+                path: "contexto",
                 element: <Contexto />
             },
             {
-                path: "/hooks-basicos",
+                path: "hooks-basicos",
                 element: <HooksBasicos />
             },
             {
-                path: "/introduccion",
+                path: "introduccion",
                 element: <Introduccion />
             },
             {
-                path: "/jsx-props",
+                path: "jsx-props",
                 element: <JSXProps />
             },
             {
-                path: "/proyecto-integrador",
+                path: "proyecto-integrador",
                 element: <ProyectoIntegrador />
             },
             {
-                path: "/pruebas-unitarias",
+                path: "pruebas-unitarias",
                 element: <PruebasUnitarias />
             },
             {
-                path: "/react",
+                path: "react",
                 element: <React />
             },
             {
-                path: "/rutas",
+                path: "rutas",
                 element: <Rutas />
             },
             {
-                path: "/spa",
+                path: "spa",
                 element: <SPA />
             }
         ]
