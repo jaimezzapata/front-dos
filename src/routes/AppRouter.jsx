@@ -19,53 +19,51 @@ export let enrutadorApp = [
         element: <Login />
     },
     {
-        path: "/home/",
-        element: <ProtectedRoute proteger={<Home />} />,
-        children: [
-            {
-                path: "consumo-api",
-                element: <ConsumoAPI />
-            },
-            {
-                path: "contexto",
-                element: <Contexto />
-            },
-            {
-                path: "hooks-basicos",
-                element: <HooksBasicos />
-            },
-            {
-                path: "introduccion",
-                element: <Introduccion />
-            },
-            {
-                path: "jsx-props",
-                element: <JSXProps />
-            },
-            {
-                path: "proyecto-integrador",
-                element: <ProyectoIntegrador />
-            },
-            {
-                path: "pruebas-unitarias",
-                element: <PruebasUnitarias />
-            },
-            {
-                path: "react",
-                element: <React />
-            },
-            {
-                path: "rutas",
-                element: <Rutas />
-            },
-            {
-                path: "spa",
-                element: <SPA />
-            }
-        ]
+        path: "/home",
+        element: <ProtectedRoute proteger={<Home />} />
+    },
+    {
+        path: "/consumo-api",
+        element: <ProtectedRoute proteger={<ConsumoAPI />} />
+    },
+    {
+        path: "/contexto",
+        element: <ProtectedRoute proteger={<Contexto />} />
+    },
+    {
+        path: "/hooks-basicos",
+        element: <ProtectedRoute proteger={<HooksBasicos />} />
+    },
+    {
+        path: "/introduccion",
+        element: <ProtectedRoute proteger={<Introduccion />} />
+    },
+    {
+        path: "/jsx-props",
+        element: <ProtectedRoute proteger={<JSXProps />} />
+    },
+    {
+        path: "/proyecto-integrador",
+        element: <ProtectedRoute proteger={<ProyectoIntegrador />} />
+    },
+    {
+        path: "/pruebas-unitarias",
+        element: <ProtectedRoute proteger={<PruebasUnitarias />} />
+    },
+    {
+        path: "/react",
+        element: <ProtectedRoute proteger={<React />} />
+    },
+    {
+        path: "/rutas",
+        element: <ProtectedRoute proteger={<Rutas />} />
+    },
+    {
+        path: "/spa",
+        element: <ProtectedRoute proteger={<SPA />} />
     },
     {
         path: "/dashboard",
         element: <ProtectedRoute proteger={<Dashboard />} />
     }
-]
+];

@@ -4,6 +4,12 @@ export function generarToken() {
     return Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2)
 }
 
+export function cerrarSesion() {
+    localStorage.removeItem("token")
+    localStorage.removeItem("usuario")
+    window.location.href = "/"
+}
+
 export function alertaRedireccion(titulo, mensaje, icono, usuario) {
     console.log(usuario)
     let timerInterval;
