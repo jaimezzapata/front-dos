@@ -11,6 +11,7 @@ import Rutas from "../pages/Rutas";
 import SPA from "../pages/SPA";
 import ProtectedRoute from "./ProtectedRoute";
 import Dashboard from "../pages/Dashboard";
+import Home from "../pages/Home";
 
 export let enrutadorApp = [
     {
@@ -19,7 +20,7 @@ export let enrutadorApp = [
     },
     {
         path: "/home/",
-        element: <ProtectedRoute proteger={<Dashboard />} />,
+        element: <ProtectedRoute proteger={<Home />} />,
         children: [
             {
                 path: "consumo-api",
@@ -62,5 +63,9 @@ export let enrutadorApp = [
                 element: <SPA />
             }
         ]
+    },
+    {
+        path: "/dashboard",
+        element: <ProtectedRoute proteger={<Dashboard />} />
     }
 ]

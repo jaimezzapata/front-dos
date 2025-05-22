@@ -1,71 +1,77 @@
 export default function Home() {
+  let usuario = JSON.parse(localStorage.getItem("usuario"))
+
   return (
-    <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
-      <aside className="w-64 bg-blue-900 text-white flex flex-col">
-        <div className="text-2xl font-bold p-6 border-b border-blue-800">
-          CoreUI
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-100 text-gray-800 font-sans">
+      <header className="bg-blue-900 text-white p-6 shadow">
+        <div className="max-w-6xl mx-auto flex justify-between items-center">
+          <h1 className="text-2xl font-bold">EduForma</h1>
+          <nav className="space-x-6 text-sm">
+            <h2 className="text-xl">{usuario.nombre}</h2>
+          </nav>
         </div>
-        <nav className="flex-1 p-4 space-y-2 text-sm">
-          <a href="#" className="block px-4 py-2 rounded bg-blue-800">Dashboard</a>
-          <a href="#" className="block px-4 py-2 hover:bg-blue-800">Users</a>
-          <a href="#" className="block px-4 py-2 hover:bg-blue-800">Settings</a>
-        </nav>
-      </aside>
+      </header>
 
-      {/* Main content */}
-      <div className="flex-1 flex flex-col">
-        {/* Topbar */}
-        <header className="bg-white shadow p-4 flex items-center justify-between">
-          <div className="text-lg font-semibold text-gray-800">Dashboard</div>
-          <div className="flex items-center space-x-4">
-            <button className="text-gray-600 hover:text-gray-800">🔔</button>
-            <button className="text-gray-600 hover:text-gray-800">⚙️</button>
-            <img
-              src="https://i.pravatar.cc/30"
-              alt="profile"
-              className="rounded-full w-8 h-8"
-            />
-          </div>
-        </header>
+      <section className="max-w-6xl mx-auto text-center py-20 px-6">
+        <h2 className="text-4xl md:text-5xl font-semibold text-blue-900 mb-4">
+          Front 2
+        </h2>
+        <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+          Formación especializada en desarrollo front-end moderno con enfoque en React, SPA, pruebas unitarias y consumo de APIs.
+        </p>
+      </section>
 
-        {/* Content area */}
-        <main className="p-6 space-y-6 overflow-y-auto">
-          {/* Card summary */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <SummaryCard color="bg-blue-500" />
-            <SummaryCard color="bg-sky-400" />
-            <SummaryCard color="bg-yellow-400" />
-            <SummaryCard color="bg-red-400" />
-          </div>
-
-          {/* Placeholder for traffic chart */}
-          <div className="bg-white rounded-lg shadow p-6">
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold text-gray-700">Traffic</h2>
-              <div className="flex space-x-2 text-sm">
-                <button className="px-3 py-1 bg-blue-600 text-white rounded">Month</button>
-                <button className="px-3 py-1 border border-gray-300 rounded text-gray-600">Day</button>
-                <button className="px-3 py-1 border border-gray-300 rounded text-gray-600">Year</button>
-              </div>
+      <section id="programa" className="py-16 px-6 bg-gradient-to-tr from-blue-200 to-blue-100">
+        <div className="max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold text-blue-900 mb-6">Programa Detallado</h3>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-900">
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 1</h4>
+              <p>Pacto Pedagógico y Proyecto Integrador</p>
             </div>
-            <div className="h-64 bg-blue-100 flex items-center justify-center text-blue-700">
-              [ Gráfico de tráfico aquí ]
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 2</h4>
+              <p>Generalidades de un SPA</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 3</h4>
+              <p>Introducción a React</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 4</h4>
+              <p>Rutas y Conexiones en React</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 5</h4>
+              <p>JSX y Props</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 6</h4>
+              <p>Hooks: useState y useEffect</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 7</h4>
+              <p>Hook useContext</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 8</h4>
+              <p>Consumo de APIs (Fetch y Axios)</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 9</h4>
+              <p>Introducción a Pruebas Unitarias en JS</p>
+            </div>
+            <div className="bg-white rounded-lg p-4 shadow">
+              <h4 className="font-semibold mb-2">Tema 10</h4>
+              <p>Seguimiento al Proyecto Integrador</p>
             </div>
           </div>
-        </main>
-      </div>
-    </div>
-  );
-}
+        </div>
+      </section>
 
-// Subcomponente para tarjetas
-function SummaryCard({ color = "bg-blue-500" }) {
-  return (
-    <div className={`${color} text-white rounded-lg p-4 shadow`}>
-      <div className="text-2xl font-bold">9.823</div>
-      <div className="text-sm">Members online</div>
-      <div className="mt-2 opacity-80 text-xs">[ mini gráfico aquí ]</div>
+      <footer className="bg-blue-900 text-white text-center text-sm p-4 mt-10">
+        &copy; {new Date().getFullYear()} EduForma. Todos los derechos reservados.
+      </footer>
     </div>
   );
 }

@@ -13,7 +13,7 @@ export default function Login() {
             let usuario = buscarUsuario(email, password)
             localStorage.setItem("token", token);
             localStorage.setItem("usuario", JSON.stringify(usuario));
-            alertaRedireccion("Bienvenido" + usuario.nombre, "Será redireccionado al contenido", "success", "/home")
+            alertaRedireccion("Bienvenido" + usuario.nombre, "Será redireccionado al contenido", "success", usuario)
         } else {
             alert("Credenciales incorrectas");
         }

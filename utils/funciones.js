@@ -4,7 +4,8 @@ export function generarToken() {
     return Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2) + Math.random().toString(36).substring(2)
 }
 
-export function alertaRedireccion(titulo, mensaje, icono, ruta){
+export function alertaRedireccion(titulo, mensaje, icono, usuario) {
+    console.log(usuario)
     let timerInterval;
     Swal.fire({
         title: titulo,
@@ -21,7 +22,11 @@ export function alertaRedireccion(titulo, mensaje, icono, ruta){
         },
         willClose: () => {
             clearInterval(timerInterval);
-            window.location.href = ruta
+            if (usuario.rol == "admin") {
+                window.location.href = "/dashboard/"
+            } else {
+                window.location.href = "/home/"
+            }
         }
     })
 }
