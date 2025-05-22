@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { buscarUsuario } from "../../utils/auth";
-import { alertaRedireccion, generarToken } from "../../utils/funciones";
+import { alertaGeneral, alertaRedireccion, generarToken } from "../../utils/funciones";
 export default function Login() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -13,9 +13,9 @@ export default function Login() {
             let usuario = buscarUsuario(email, password)
             localStorage.setItem("token", token);
             localStorage.setItem("usuario", JSON.stringify(usuario));
-            alertaRedireccion("Bienvenido" + usuario.nombre, "Será redireccionado al contenido", "success", usuario)
+            alertaRedireccion("Bienvenido " + usuario.nombre, "Será redireccionado al contenido", "success", usuario)
         } else {
-            alert("Credenciales incorrectas");
+           alertaGeneral("Error", "Usuario y/o contraseña no existe", "error")
         }
     };
 

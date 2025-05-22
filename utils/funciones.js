@@ -5,9 +5,21 @@ export function generarToken() {
 }
 
 export function cerrarSesion() {
-    localStorage.removeItem("token")
-    localStorage.removeItem("usuario")
-    window.location.href = "/"
+    Swal.fire({
+        title: "¿Desea cerrar su sesión?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "No",
+        confirmButtonText: "Si"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            localStorage.removeItem("token")
+            localStorage.removeItem("usuario")
+            window.location.href = "/"
+        }
+    });
 }
 
 export function alertaRedireccion(titulo, mensaje, icono, usuario) {
@@ -35,4 +47,12 @@ export function alertaRedireccion(titulo, mensaje, icono, usuario) {
             }
         }
     })
+}
+
+export function alertaGeneral(titulo, mensaje, icono) {
+    Swal.fire({
+        title: titulo,
+        text: mensaje,
+        icon: icono
+    });
 }

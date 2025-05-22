@@ -13,14 +13,13 @@ export default function Dashboard() {
                     <a href="#" className="block px-4 py-2 rounded bg-blue-800">Dashboard</a>
                     <a href="#" className="block px-4 py-2 hover:bg-blue-800">Users</a>
                     <a href="#" className="block px-4 py-2 hover:bg-blue-800">Settings</a>
-                    <a onClick={() => cerrarSesion()} href="#" className="block px-4 py-2 hover:bg-blue-800">Cerrar Sesión</a>
                 </nav>
             </aside>
             <div className="flex-1 flex flex-col">
                 <header className="bg-white shadow p-4 flex items-center justify-between">
                     <div className="text-lg font-semibold text-gray-800">Dashboard</div>
                     <div className="flex items-center space-x-4">
-                        <button className="text-gray-600 hover:text-gray-800">🔔</button>
+                        <button onClick={() => cerrarSesion()} className="text-gray-600 hover:text-gray-800">🔓</button>
                         <button className="text-gray-600 hover:text-gray-800">⚙️</button>
                         <img
                             src="https://i.pravatar.cc/30"
